@@ -1,2 +1,5 @@
-node_modules
 *.csv
+*.sqlite
+.env
+db
+.DS_Store

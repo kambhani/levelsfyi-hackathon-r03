@@ -1,5 +1,7 @@
-FROM node:alpine
-WORKDIR app
+# use the official Bun image
+# see all versions at https://hub.docker.com/r/oven/bun/tags
+FROM oven/bun:1 AS base
+WORKDIR /app
 COPY . .
-RUN npm install
-CMD ["npm", "start"]
+RUN bun install --frozen-lockfile --production
+CMD ["bun", "run", "start"]
